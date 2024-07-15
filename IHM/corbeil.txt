@@ -1,0 +1,104 @@
+
+        <%- include('./composants/headernav') %>
+        <nav class="btn-group">        
+                <button type="button" class="btn btnhead" style="border: 0;">Accueil</button>
+                <button type="button" class="btn btn-success btnhead">Quizs</button>
+        </nav>
+      
+    <main>
+        <section class="header p-5 text-light" id="header">
+              
+               <div class="row">
+                   <div class="col-sm-6 entete">
+                        <h1 class="rev h1 display-1 text-primary fw-bold title"><span>QUIZ </span><br><span> MONEY</span><p>jouez et gagnez</p></h1>
+                        <div class="box"><img class="rounded-circle img-fluid" src="im/eye.jpg"></div>
+                    </div>
+                    
+                <div class="col-sm-6 rev">
+                     <h1 >Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+                    <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, quo ut. Eaque odio sequi blanditiis!</p>
+                </div>
+                   
+                </div>
+       
+            </div>
+            
+        </section>
+        <section   id="apropo">
+                <img src="im/grass2.png" class="img-fluid" id="grass">
+                <div class="row container">
+                <div class="rev col-sm-6 p-3 ">
+                    <h2 class="h2">Desormais ca paie d'etre Otaku </h2>
+                    <a class="btn btn-warning btn-lg m-4" href='#'>COMMENT JOUER AUX QUIZ MONEY</a>           
+        </div>
+        <div class="rev col-sm-6 border border-info rounded p-2 recent">
+            <h2 class="h2 ">Quiz Recent</h2>
+            <div class="d-flex">
+               
+                   <%- include('./composants/quizrecent') %>
+               
+            </div>
+           
+            <div class="">
+                <a class="btn btn-info btn-lg m-4" href='#'>VOIR LES DETAILS</a>          
+        </div>
+        </div>
+        
+    </div>
+    <img src="im/grass.png" class="img-fluid" alt="" id="grass2">
+
+        </section>
+        <section id="money">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 rev">
+                       <%- include('./composants/quizmoney') %>
+                    </div >
+                       
+                    
+                </div>
+                </section>
+                <section id="footer">
+                    <img src="im/grass2.png" class="img-fluid" id="grass" alt="">
+                    <footer class="row">
+                        
+                        <div class="imfoot rev p-5  col-md-3">
+                            <img src="im/gear.webp" class="img img-fluid rounded img-thumbnail w-50"  alt="">
+                        </div>
+                        <div class="sociaux container p-5  col-md-3">
+                        <div class="fb rev d-flex"><img src="im/fb.png" width="60px"alt="">
+                        <p>Manga vx</p>
+                    </div>
+                        <div class="insta rev d-flex"><img src="im/insta.png" width="60px"alt="">
+                            <p>Manga vxx</p>
+                        </div>
+                        <div class="tel rev d-flex"><img src="im/tel.png" width="60px"alt="">
+                            <p>0992335768</p>
+                        </div>
+                        </div>
+                        
+                        <div class=" col-md-6">
+                             <p class="infof rev container p-5">Jouez aux QuizMoney et Gagnez de l'argent en vous qualifiant dans le top 3,Pour les info supplementaires et pour intereagir avec les auteurs, 
+                        abonnez-vous aux comptes facebook mentionnés ci-dessus.les conditions pour jouer restent les memes,ayez un des  comptes figurants ci-dessous et ayez au moins 1$.</p>
+                        <div class="banques rev">
+                                <img src="im/airtel.jpeg" class="rounded" width="60px" alt="">
+                                <img src="im/orange.png"class="rounded" width="60px" alt="">
+                                <img src="im/mpesa.png"class="rounded" width="60px" alt="">
+                                
+                            </div>
+                        </div>
+                   
+                        <p class="copyrig">&copy;2023 MoneyQuiz.Tout droit réservés</p>
+                        
+                    </footer>
+                </section>
+    </main>
+
+   
+    <script src="boot/js/bootstrap.bundle.min.js"></script>
+    <script src="gsap.min.js"></script>
+    <script src="script.js"></script>
+
+
+
+
+      passport.authenticate('google', { failureRedirect: '/login' }),

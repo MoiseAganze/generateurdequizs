@@ -1,0 +1,8 @@
+<h1>VOS QUIZ</h1>
+        <% for(var i=0;i<usermongo.quizs.length;i++){ %>
+            <div class="quiz w-100 m-2 d-flex justify-content-between">
+                    <a  class="link-dark" href="/quiz/<%=usermongo.quizs[i][0].id %>"><%=usermongo.quizs[i][0].nomquiz %></a>
+                    <img src="im/more.png" class="menucontextimg" data_titre="<%=usermongo.quizs[i][0].nomquiz %>" data_id="<%=usermongo.quizs[i][0].id %>" width="40" height="40" data-bs-toggle="modal" data-bs-target="#modalmenu" alt="">
+                    
+            </div>
+        <% } %>

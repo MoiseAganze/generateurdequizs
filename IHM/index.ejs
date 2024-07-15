@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <%-include("font") %>
+    <link rel="stylesheet" href="./css/font.css">
+    
+    <title>Document</title>
+</head>
+<body class="d-flex flex-column align-items-center justify-content-center">
+   
+
+    <div class="w-100 bg-dark d-flex justify-content-between align-items-center p-1">
+       <form action="/logout" method="post">
+                <button type="submit" class="bg-transparent"><img src="im/exit.png" style="cursor: pointer;" width="30" height="30" alt=""></button> 
+       </form>
+       
+       <img  class="img-fluid rounded-circle"  src="<%= user.photo  %>"  width="30" height="30" loading="eager" style="border:2px solid #fff;" alt="">
+    </div>
+
+
+    <div class="zeroquiz w-100 d-flex d-none justify-content-center align-items-center">
+        <a class="btn btn-dark border-2">CREEZ UN QUIZ</a>
+    </div>
+    
+    <div class="quizs w-auto  d-flex flex-column justify-content-center align-items-center mt-4 p-5 gap-2">
+        
+        <%-include("composants/userquizs") %>
+
+        <a href="/creer" class="btn btn-success">nouveau quiz</a>
+    </div>
+    <div class="modal fade" id="modalmenu">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="titrequizmenu"></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="quizlink">
+                        <button id="btncopierlien" onclick="copierlien()" class="btn btn-dark m-1">copier le lien</button>
+                        <a class="btn btn-danger m-1" id="supprimerquiz" href="">supprimer le quiz</a>
+                        <a class="btn btn-info m-1" id="statquiz" href="">Statistiques du quiz</a>
+                    </div>
+                    <div class="modal-footer">              
+                        <button type="button" id="fermermodal" class="btn btn-warning" data-bs-dismiss="modal">fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        const imgmenu=document.querySelectorAll(".menucontextimg")
+        const inputquizlink=document.getElementById("quizlink")
+        const titrequizmenu=document.getElementById("titrequizmenu")
+        const supprimerquiz=document.getElementById("supprimerquiz")
+        const statquiz=document.getElementById("statquiz")
+        imgmenu.forEach(element => {
+            element.addEventListener("click",()=>{
+                const idquiz=element.getAttribute("data_id")
+                inputquizlink.value=document.location.origin+"/quiz/"+idquiz
+                titrequizmenu.innerHTML=element.getAttribute("data_titre")
+                supprimerquiz.href="supprimerquiz/"+idquiz
+                statquiz.href="stats/"+idquiz
+            })
+        });
+        function copierlien(){
+            inputquizlink.select()
+            document.execCommand('copy')
+            inputquizlink.blur()
+            document.getElementById("btncopierlien").innerHTML="copié"
+        }
+    </script>
+</body>
+</html>

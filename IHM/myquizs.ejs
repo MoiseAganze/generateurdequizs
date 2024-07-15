@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="../css/quiz.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <%-include("font") %>
+        <link rel="stylesheet" href="../css/font.css">
+       <title>Quiz</title>
+  
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center row" onload="startCountDown()" style="font-family:'Titillium Web';">
+        
+     <div class="divq2  p-3 col-md-6 container d-flex flex-column justify-content-center">
+      <input type="hidden" id="tabquiz" value="<%= tab %>">
+        <div class="timefin"style="display: none;">0</div>
+                    
+        <div class="countload" >11</div>
+
+          <div class="progress container d-flex d-none" >
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="progress-bar"  aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+                    <div class="container" id="quiz-container" style="display: none;">
+                      <div class="" id="quiz">
+                       
+                            <div class="p-3">
+                                <h2 id='question' ></h2>
+                            <ul id='choices' class="list-group list-group-flush rounded"></ul>
+                            <button id='submit-btn' class='btn btn-dark mt-3' >SUIVANT</button>
+                            </div>
+
+                      </div>
+                        
+                      <div id='result-container' class="" style="display: none;">
+                
+                          <div class='deux'>
+                            <div class='textdiv' style='margin-top: 1em;'>
+                                <p id='result'></p>
+                                <a class='btn btn-light' role="button" href='/'>
+                                <form action="/setscore" method="post">
+                                    <input type="hidden" id="setscore" name="score">
+                                    <input type="hidden" id="settime" name="time">
+                                    <input type="hidden"  name="name" value="<%=user.name %>">
+                                    <input type="hidden"  name="email" value="<%=user.email %>">
+                                    <input type="hidden"  name="quizid" value="<%=id %>">
+                                    <button class="btn btn-outline-dark" type="submit">Finish</button>
+                                </form></a>
+                                <p class="p"></p>
+                          </div>
+                         
+                          
+                         
+                        </div>
+                            
+                        
+                    </div>
+               
+     </div>
+     </div>
+     
+</body>
+<script src="../js/quiz.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</html>
+

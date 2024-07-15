@@ -1,0 +1,85 @@
+
+#textq{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 10px 10px 20px 10px;
+}
+
+#ulA{
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+#ulA li{
+    cursor: pointer;
+    padding: 3px 5px 3px 5px;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.788);
+}
+#ulA li:hover{
+    background: rgba(10, 5, 2, 0.788);
+    color: rgba(255, 255, 255, 0.788);
+}
+.assselected{
+    background: rgba(10, 5, 2, 0.788);
+    color: rgba(255, 255, 255, 0.788);
+}
+#alertbonassertion{
+    font-weight: bold;
+    margin: 10px 25px 5px 25px;
+}
+.questionadded{
+    color: rgb(0, 0, 0);
+}
+.uladded{
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+   gap: 10px;
+   list-style: none;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid rgb(0, 0, 0);
+   border-radius: 5px;
+}
+.uladded p{
+        
+    width: 100%;
+    padding: 5px;
+}
+.uladded li{
+    border: 1px solid black;
+    width: 100%;
+    padding: 4px;
+    border-radius: 4px;
+}
+.uladded .bonne{
+    background: #2c5e46;
+    color:wheat;
+}
+
+#btncreerquiz{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.delai{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    gap: 10px;
+}
+.delai p{
+    margin-top: 5px;
+    font-weight: 600;
+}
+.delai input{
+    width: 70px;
+    padding: 3px;
+    border-radius: 3px;
+}

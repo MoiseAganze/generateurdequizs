@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+  
+/* @font-face{
+	font-family: 'manga-speak';
+	src: url("../fonts/mangaspeak/manga_speak.ttf");
+}
+@font-face{
+	font-family: 'manga';
+	src:url('../fonts/manga/Manga.ttf');
+}
+@font-face{
+	font-family: 'coco';
+	src:url('../fonts/cocomat/Cocomat\ Light-trial.ttf');
+} */
+body{
+    overflow-x: hidden;
+    font-family: 'Titillium Web';
+    width: 100%;
+    background: #ffffff;
+}
+.zeroquiz{
+    height: 100vh;
+}
+.zeroquiz a{
+    font-family: 'Titillium Web';
+    font-size: 10vw;
+}
+
+.quizs{
+
+}
+.quizs .quiz{
+    cursor: pointer;
+    height: 50px;
+    background: #fcf0f0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px 0 10px;
+    border: 2px solid rgb(20, 19, 19);
+}
+.quizs .quiz p{
+    font-family: 'Titillium Web';
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.623);
+    
+}
+
+.quizs h1{
+    font-family: 'Titillium Web';
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+#btncopierlien:active{
+    transition: 0.5s;
+    background-color: aqua;
+    padding: 5px;
+}

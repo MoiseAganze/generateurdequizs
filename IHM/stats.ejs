@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <%-include("font") %>
+    <link rel="stylesheet" href="../css/font.css">
+    <title>Document</title>
+</head>
+<body class="container d-flex justify-content-center pt-5" style="font-family: 'Titillium Web';">
+    <div class="container d-flex flex-column">
+    <% const quiz=JSON.parse(tab)
+       const gamers=quiz[0].gamers
+       gamers.sort(function(a,b){
+        if(b.score!==a.score){
+            return b.score-a.score
+        }
+        return a.temps-b.temps
+       })
+       if(gamers.length>0){ %>
+        <h1 class="mb-3 fw-bold"><%=gamers.length %> Participant(s)</h1>
+     <%  for(var i=0;i<gamers.length;i++){ %>
+        <h3><%=i+1 %>.<%=gamers[i].joueur %> /score: <%=gamers[i].score %> /temps: <%=gamers[i].temps %>s</h3>
+
+      <% }
+       }else{ %>
+        <h2>Personne n'as encore joué à ce quiz</h2>
+       <%}%>
+      
+   
+</div>
+</body>
+</html>

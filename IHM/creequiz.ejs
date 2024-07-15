@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/creerquiz.css">
+    <%-include("font") %>
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+<body class="bg-light" style="font-family: 'Titillium Web';">
+    <input type="hidden" value="<%= userid %>" id="userid" name="">
+    <form action="/voirquiz" method="post" id="formquiz">
+        <input type="hidden" name="inputquiz" id="inputquiz">
+    </form>
+   <div class="container w-auto d-flex flex-column justify-content-center align-items-center">
+    <div class="d-flex flex-column">
+        <p style="font-size: 14px;color: rgb(0, 0, 0);border: 1px solid black;padding: 2px;margin-top: 4px;">Ne faites pas d'erreur pendant la creation de votre quiz,si vous faites une erreur,vous devriez recommencer la creation du quiz en rafraichissant la page!</p>
+        <div class="delai mt-4">
+            <p>Nom du quiz: </p>
+            <input type="text" id="nomquiz" placeholder="nom du quiz" style="width: 100px;">
+        </div>
+        <div class="delai mt-4">
+        <p >durée max du quiz: </p>
+        <input value="0" type="number" id="delai">
+        <p>Minutes</p>
+    </div>
+    <div class="delai mt-4">
+        <p >Nbre participants : </p>
+        <input value="0" type="number" id="njoueurs">
+        
+    </div>
+    </div>
+    
+    <div id="allquestions" class="container w-75 d-flex flex-column m-2 justify-content-center align-items-center gap-5">
+
+    </div>
+    
+    
+    
+    <button class="btn btn-outline-dark mt-5" data-bs-toggle="modal" data-bs-target="#monModal">AJOUTER QUESTION</button>
+        <div class="modal fade" id="monModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Titre</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex flex-column gap-2">
+                        <textarea class="form-control border-primary rounded" id="areaq" rows="3" placeholder="entrez la question"></textarea>
+                        <button class="btn btn-success" id="btnq" >valider la question</button>
+                        <p class="" id="textq"></p>
+                        <ul id="ulA">
+                            <h2>Assertions: </h2>
+                        </ul>
+                        <p id="alertbonassertion"></p>
+                        <textarea class="form-control border-primary rounded" id="areaA" rows="1" placeholder="ajouter une assertion"></textarea>
+                        <button class="btn btn-danger" id="btnA" >ajouter assertion</button>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">              
+                        <button type="button" id="fermermodal" class="btn btn-warning" data-bs-dismiss="modal">fermer/annuler</button>
+                        <button type="button" id="btncreequestion" class="btn btn-success" >SUIVANT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <button id="btncreerquiz" class="btn btn-dark">CREATION FINI</button>
+
+    </div>  
+    
+<script src="js/creerquiz.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
